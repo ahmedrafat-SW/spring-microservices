@@ -23,7 +23,7 @@ public class CustomerService {
                 .build();
         this.customerRepository.saveAndFlush(customer);
         FraudCheckResponse fraudResponse = this.restTemplate.getForObject(
-                "http://localhost:8090/api/v1/fraud-check/{customerId}",
+                "http://FRAUD/api/v1/fraud-check/{customerId}",
                 FraudCheckResponse.class,
                 customer.getId());
         assert fraudResponse != null;
